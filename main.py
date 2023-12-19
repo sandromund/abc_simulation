@@ -50,15 +50,15 @@ solutions = [(random.randint(0, window_size - 1), random.randint(0, window_size 
 dimension = 2  # x and y
 
 
-def generate_new_candidate_solution(k):
+def generate_new_candidate_solution(k_i):
     candidate_solution = []
     for i in range(dimension):
         o = random.uniform(-1, 1)
         j = random.randint(0, n - 1)
         while j == i:
             j = random.randint(0, n - 1)
-        solutions_l = [solutions[k][i], solutions[j][i]]
-        candidate_solution.append(round(solutions[k][i] + o * (max(solutions_l) - min(solutions_l))) % 1000)
+        solutions_l = [solutions[k_i][i], solutions[j][i]]
+        candidate_solution.append(round(solutions[k_i][i] + o * (max(solutions_l) - min(solutions_l))) % 1000)
     return candidate_solution
 
 
@@ -93,11 +93,9 @@ while running:
         frame_count += 1
         filename = "screen_%04d.png" % (frame_count)
         pygame.image.save(screen, filename)
-
+        if frame_count > fps * 10:
+            break
     clock.tick(fps)
-
-    if frame_count > fps * 10:
-        break
 
 pygame.quit()
 sys.exit()
