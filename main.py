@@ -1,8 +1,5 @@
-import math
-
 import pygame
 import sys
-from src.hive import Hive, Bee
 import numpy as np
 import random
 
@@ -13,6 +10,7 @@ fps = 30
 
 
 def f(x, y) -> float:
+    # Himmelblau's function
     return (x ** 2 + y - 11) ** 2 + (x + y ** 2 - 7) ** 2
 
 
