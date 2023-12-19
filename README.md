@@ -4,6 +4,7 @@ My implementation and visualisation of the [artificial bee colony (ABC)](https:/
 
 I left out the evaluation part by adding more bees and was surprised that the optimizations still worked well. 
 
+Perhaps the algorithm could also be used to train a neural network in which several neurons support each other, like bees, in a kind of swarm intelligence. 
 
 <p align="center">
     <img src="abc.gif"  width="60%" height="30%">
